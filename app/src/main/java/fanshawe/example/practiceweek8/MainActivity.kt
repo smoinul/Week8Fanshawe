@@ -135,6 +135,8 @@ class MainActivity : AppCompatActivity() {
                 putExtra(Intent.EXTRA_STREAM, uri)
                 // Grant temporary read permission to the content URI
                 addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                //addCategory(Intent.CATEGORY_OPENABLE)
+                //for Intent.ACTION_SEND, the category CATEGORY_OPENABLE is not usually necessary because this action indicates you're sending data to another component, not requesting data that needs to be openable. The recipient app will handle the content URI as it sees fit.
             }
 
             // Create a chooser intent
@@ -150,6 +152,19 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
             }
 
+
+        }
+    }
+
+    fun onClickWeb(view: View) {
+        val fragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as ChooserTest
+
+        fragment.view?.let { fragmentView ->
+            val editText = fragmentView.findViewById<EditText>(R.id.editTextText2)
+            val webIntent: Intent = Uri.parse("https://${editText.text.toString()}").let { webpage ->
+                Intent(Intent.ACTION_VIEW, webpage)
+            }
+            startActivity(webIntent)
 
         }
     }
