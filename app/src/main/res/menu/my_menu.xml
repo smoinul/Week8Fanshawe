@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/setalarm"
+        android:icon="@drawable/baseline_access_alarm_24"
+        android:title="SetAlarm"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/chooser"
+        android:icon="@drawable/baseline_ac_unit_24"
+        android:title="Chooser"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/third"
+        android:icon="@drawable/baseline_crisis_alert_24"
+        android:title="Other"
+        app:showAsAction="never"/>
+
+</menu>
